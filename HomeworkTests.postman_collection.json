@@ -1,0 +1,854 @@
+{
+	"info": {
+		"_postman_id": "273aea27-0832-43d8-8794-812604dedec5",
+		"name": "HomeworkTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Utilitys",
+			"item": [
+				{
+					"name": "Help",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.contain(\"List of commands\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/utility/help",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"utility",
+								"help"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"Success\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/utility/reset_history",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"utility",
+								"reset_history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"[]\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/utility/get_history",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"utility",
+								"get_history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save history",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"Success\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/utility/save_history",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"utility",
+								"save_history"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commands",
+			"item": [
+				{
+					"name": "get all from one day",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.contain(\"1.16332 1.16335 1.16328 1.16329 0.00014\")",
+									"    pm.expect(pm.response.text()).to.contain(\"1.1638 1.16384 1.16378 1.16383 0.00014\")",
+									"    pm.expect(pm.response.text()).to.contain(\"1.16382 1.16389 1.16378 1.16384 0.00025\")",
+									"    pm.expect(pm.response.text()).to.contain(\"1.16281 1.16307 1.16281 1.16303 0.00038\")",
+									"    pm.expect(pm.response.text()).to.contain(\"1.16419 1.16422 1.16407 1.16408 0.00018\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/EURUSD/2020/11/02",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"EURUSD",
+								"2020",
+								"11",
+								"02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all from hour",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.contain(\"1.17174 1.17175 1.17174 1.17174 0.00005\")",
+									"    pm.expect(pm.response.text()).to.contain(\"1.17231 1.17234 1.17231 1.17234 0.00005\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/EURUSD/2020/11/03/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"EURUSD",
+								"2020",
+								"11",
+								"03",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all from minute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"[\\\"1.17178 1.17178 1.17174 1.17175 0.00005\\\"]\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/EURUSD/2020/11/03/17/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"EURUSD",
+								"2020",
+								"11",
+								"03",
+								"17",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all wrong request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"[]\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/EURUSD/2021/11/03/17/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"EURUSD",
+								"2021",
+								"11",
+								"03",
+								"17",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get low from day",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"1.19236\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/command/get low/2020/11/30",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"command",
+								"get low",
+								"2020",
+								"11",
+								"30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get high from hour",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"1.18566\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/command/get high/2020/11/16/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"command",
+								"get high",
+								"2020",
+								"11",
+								"16",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get close from minute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"1.18526\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/command/get close/2020/11/16/17/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"command",
+								"get close",
+								"2020",
+								"11",
+								"16",
+								"17",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get open from day",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"1.18516\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/command/get open/2020/11/16",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"command",
+								"get open",
+								"2020",
+								"11",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "volatility from day",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"0.00548\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/command/volatility/2020/11/16",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"command",
+								"volatility",
+								"2020",
+								"11",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get low wrong type request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"-1\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/command/get low2www/2020/11/30",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"command",
+								"get low2www",
+								"2020",
+								"11",
+								"30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get close wrong day request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"-1\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/command/get close/2021/11/16/17/12",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"command",
+								"get close",
+								"2021",
+								"11",
+								"16",
+								"17",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "most volitale day",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"2020-11-03\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/most/volatile/day",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"most",
+								"volatile",
+								"day"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "most volitale hour",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"2020-11-03 21\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/most/volatile/hour",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"most",
+								"volatile",
+								"hour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "most volitale wrong type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"Wrong command type\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/most/volatile/hoursdasd",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"most",
+								"volatile",
+								"hoursdasd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "average daily",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"0.00621\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/average/daily",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"average",
+								"daily"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "average hourly",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"0.00124\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/average/hourly",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"average",
+								"hourly"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "average minutely",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"0.00016\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/average/minutely",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"average",
+								"minutely"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "average wrong",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Help request succesfull\", function () {",
+									"  pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+									"});",
+									"",
+									"pm.test(\"Confirm response message\", function () {",
+									"    pm.expect(pm.response.text()).to.be.eql(\"-1\")",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/average/minuteasdsadsas",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"average",
+								"minuteasdsadsas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

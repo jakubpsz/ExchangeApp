@@ -1,0 +1,12 @@
+Obowjazkowa cziesc
+1. Przerobic hw2 w aplikacje Spring Boot
+2. Wystawic REST endpoint ktory bede dostawac requesty w takim formacie:
+  http://localhost:8080/EURUSD/yyyy/MM/dd/hh/mm
+3. Jako odpowiedz musi zwracac dane za tu minute OPEN ,HIGH,LOW,CLOSE,VOLUME
+Opcionalnie
+1. Zaprojektowac obowjazkowe zadanie 2 w taki sposob zeby kazdy z parametrow
+(MM/dd/hh/mm) byl opcionalnym
+2. Wystawic dodatkowe endpointy do innych komend zaimplementowanych w hw2
+3. Obzerwowac folder w ktorym znajduje sie plik z danymi, jesli jest dodany nowy
+plik albo modyfikowany stary - zaciagac nowe dane (take zadanie mialem w jednej)
+firmie jako zadanie testowe dodomu
